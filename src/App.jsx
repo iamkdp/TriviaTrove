@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <h1>Trivia Quiz</h1>
-      {question ? <p>{question}</p> : <p>Loading...</p>}
+      {question ? <p>{question}</p> : <p> Loading...</p>}
     </>
   )
 }
