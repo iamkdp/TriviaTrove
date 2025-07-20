@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 
 export default function QuestionCard({ questionData, onAnswer, onNext }) {
     if (!questionData) return <p>Invalid question data</p>;
+    const { question, correct_answer, category, incorrect_answers } = questionData;
+    const [options, setOptions] = useState([]);
     useEffect(() => {
+        const shuffled = [...incorrect_answers, correct_answer].sort(() => Math.random() - 0.5);
+        setOptions(shuffled);
         setSelectedOption(null);
         setIsAnswered(false);
     }, [questionData]);
-
-    const { question, correct_answer, category, incorrect_answers } = questionData;
-    const options = [...incorrect_answers, correct_answer].sort(() => Math.random() - 0.5);
 
     const [selectedOption, setSelectedOption] = useState(null);
     const [isAnswered, setIsAnswered] = useState(false);
