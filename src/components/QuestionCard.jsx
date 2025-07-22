@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 export default function QuestionCard({ questionData, onAnswer, onNext }) {
     if (!questionData) return <p>Invalid question data</p>;
     const { question, correct_answer, category, incorrect_answers } = questionData;
@@ -14,12 +13,6 @@ export default function QuestionCard({ questionData, onAnswer, onNext }) {
     const [selectedOption, setSelectedOption] = useState(null);
     const [isAnswered, setIsAnswered] = useState(false);
 
-    const decodeHTML = (html) => {
-        const txt = document.createElement("textarea");
-        txt.innerHTML = html;
-        return txt.value;
-    };
-
     const handleOptionClick = (option) => {
         if (isAnswered) return;
         setSelectedOption(option);
@@ -28,40 +21,40 @@ export default function QuestionCard({ questionData, onAnswer, onNext }) {
     };
 
     const getOptionStyle = (option) => {
-        console.log("Checking style for:", option, selectedOption, correct_answer, isAnswered);
-        if (!isAnswered) return 'bg-black-100 hover:bg-grey-200'; // default
-        if (option === correct_answer) return 'bg-green-100 text-black border border-green-10';
-        if (option === selectedOption && option !== correct_answer) return 'bg-red-100 text-black border border-red-60';
-        return 'bg-black-100 hover:bg-grey-200';
+        // console.log("Checking style for:", option, selectedOption, correct_answer, isAnswered);
+        if (!isAnswered) return 'bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200'; // default
+        if (option === correct_answer) return 'bg-green-500 text-white border border-green-600 shadow-md';
+        if (option === selectedOption && option !== correct_answer) return 'bg-red-500 text-white border border-red-60 shadow-md';
+        return 'bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200';
     };
 
 
     return (
-        <div className="p-6 mb-6 rounded shadow">
-            <p className="text-sm text-gray-600 mb-2">📘 Topic:  <span dangerouslySetInnerHTML={{ __html: category }} /></p>
-            <p className="text-base font-medium mb-4" dangerouslySetInnerHTML={{ __html: `Q: ${question}` }} />
+        <div className="max-w-md w-full bg-white rounded-lg p-6 mb-4 rounded shadow-lg">
+            <p className="text-lg font-semibold  text-blue-600 mb-3 uppercase tracking-wider">📘 Topic:  <span dangerouslySetInnerHTML={{ __html: category }} /></p>
+            <p className="text-gray-800 text-xl font-medium mb-3" dangerouslySetInnerHTML={{ __html: `Q: ${question}` }} />
 
-            <div className="space-y-2">
+            <div className="space-y-3 mb-3">
                 {options.map((option, idx) => (
                     <button
                         key={idx}
-                        className={`w-full text-left border px-4 py-2 rounded ${getOptionStyle(option)} transition`}
+                        className={`w-full text-left border px-4 py-3 rounded-lg border focis:outline-none transition ${getOptionStyle(option)} transition`}
                         onClick={() => handleOptionClick(option)}
                         disabled={isAnswered}
                     >
                         <span dangerouslySetInnerHTML={{ __html: option }} />
                     </button>
                 ))}
-            </div>
-
-            {isAnswered && (
                 <button
                     onClick={onNext}
-                    className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                    className={`w-xs mt-2 px-4 py-2 ${isAnswered ? "bg-blue-600 text-white rounded-lg hover:bg-blue-700" :
+                        "bg-blue-200 text-blue-600 cursor-not-allowed"} `}
+                    disabled={!isAnswered}
                 >
                     Next Question
                 </button>
-            )}
+            </div>
+
         </div>
     );
 }
