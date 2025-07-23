@@ -19,7 +19,7 @@ function QuizStart({ onStart }) {
     };
     if (loading) return <Loading />;
     return (
-        <div className="max-w-md w-full bg-gray-100 rounded-lg shadow-lg p-6 mx-auto">
+        <div className="r-width bg-gray-100 rounded-lg shadow-lg p-6 mx-auto">
             <h2 className="text-2xl font-bold text-center mb-6 text-blue-600">Configure Your Quiz</h2>
 
             <label className="block mb-4 font-semibold">
@@ -68,7 +68,7 @@ function QuizStart({ onStart }) {
 
             <button
                 onClick={handleStart}
-                className="w-sm bg-blue-600 text-white px-4 py-2 rounded w-full hover:bg-blie-700 
+                className="w-sm block mx-auto bg-blue-600 text-white px-4 py-2 rounded w-full hover:bg-blie-700 
                 font-semibold transittion duration-200"
             >
                 Start Quiz

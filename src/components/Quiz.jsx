@@ -37,6 +37,13 @@ function Quiz() {
     setScore(0);
     setCurrentIndex(0);
   };
+  const handleExit = () => {
+    setQuizStarted(false);          // return to start screen
+    setQuizData([]);                // clear questions
+    setCurrentIndex(0);          // reset question index
+    setScore(0);                    // reset score
+    setIsQuizComplete(false);       // hide summary
+  };
 
 
   if (!quizStarted) return (
@@ -49,11 +56,18 @@ function Quiz() {
 
   if (quizStarted)
     return (
-      <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-6">
+      <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-3xl xl:max-w-4xl bg-white rounded-lg shadow-lg">
+
         <p className="text-md text-gray-600 mb-1 text-center font-semibold tracking-wide">
           Question {currentIndex + 1} of {quizData.length}
+          <button
+            onClick={handleExit}
+            className="absolute top-4 right-4 bg-[#B7410E] hover:bg-[#a0360c] text-white font-semibold px-4 py-2 rounded shadow-md"
+          >
+            Exit Quiz
+          </button>
         </p>
-        <div className='max-w-md w-full mx-auto p-4 sm:p-6 lg:p-8'>
+        <div className='max-w-md w-full mx-auto'>
           <QuestionCard
             questionData={quizData[currentIndex]}
             onAnswer={handleAnswer}

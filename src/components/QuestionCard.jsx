@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Timer from './Timer';
 export default function QuestionCard({ questionData, onAnswer, onNext }) {
     if (!questionData) return <p>Invalid question data</p>;
     const { question, correct_answer, category, incorrect_answers } = questionData;
@@ -30,9 +31,18 @@ export default function QuestionCard({ questionData, onAnswer, onNext }) {
 
 
     return (
-        <div className="max-w-md w-full bg-white rounded-lg p-6 mb-4 rounded shadow-lg">
-            <p className="text-lg font-semibold  text-blue-600 mb-3 uppercase tracking-wider">📘 Topic:  <span dangerouslySetInnerHTML={{ __html: category }} /></p>
-            <p className="text-gray-800 text-xl font-medium mb-3" dangerouslySetInnerHTML={{ __html: `Q: ${question}` }} />
+        <div className="r-width bg-white rounded-lg mb-4 rounded shadow-lg">
+            <p className="r-width text-lg font-semibold  text-blue-600 mb-3 uppercase tracking-wider">📘 Topic:  <span dangerouslySetInnerHTML={{ __html: category }} /></p>
+            <p className="r-width text-gray-800 text-xl font-medium mb-3" dangerouslySetInnerHTML={{ __html: `Q: ${question}` }} />
+            <Timer
+                duration={15}
+                isPaused={isAnswered}
+                questionData={questionData}
+                onTimeout={() => {
+                    setIsAnswered(true);
+                    setSelectedOption(null);
+                }}
+            />
 
             <div className="space-y-3 mb-3">
                 {options.map((option, idx) => (
