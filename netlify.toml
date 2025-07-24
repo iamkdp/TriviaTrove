@@ -1,6 +1,8 @@
 [build]
     command="npm run build"
     publlish="dist"
+[build.environment]
+  NODE_VERSION = "22.17.1"
 [[redirects]]
     from="/*"
     to="/index.html"
