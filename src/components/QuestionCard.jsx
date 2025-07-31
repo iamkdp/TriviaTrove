@@ -31,9 +31,9 @@ export default function QuestionCard({ questionData, onAnswer, onNext }) {
 
 
     return (
-        <div className="r-width bg-white rounded-lg mb-4 rounded shadow-lg">
-            <p className="r-width text-lg font-semibold  text-blue-600 mb-3 uppercase tracking-wider">📘 Topic:  <span dangerouslySetInnerHTML={{ __html: category }} /></p>
-            <p className="r-width text-gray-800 text-xl font-medium mb-3" dangerouslySetInnerHTML={{ __html: `Q: ${question}` }} />
+        <div className="r-width bg-gray-100 dark:bg-gray-800 rounded-lg mb-4 rounded shadow-lg border-gray-300 dark:border-gray-700 ">
+            <p className="r-width text-lg font-semibold  text-blue-600 dark:text-blue-200 mb-3 uppercase tracking-wider">📘 Topic:  <span dangerouslySetInnerHTML={{ __html: category }} /></p>
+            <p className="r-width text-gray-800 dark:text-gray-200 text-xl font-medium mb-3" dangerouslySetInnerHTML={{ __html: `Q: ${question}` }} />
             <Timer
                 duration={15}
                 isPaused={isAnswered}
@@ -57,7 +57,7 @@ export default function QuestionCard({ questionData, onAnswer, onNext }) {
                 ))}
                 <button
                     onClick={onNext}
-                    className={`w-xs mt-2 px-4 py-2 ${isAnswered ? "bg-blue-600 text-white rounded-lg hover:bg-blue-700" :
+                    className={`w-sm block mx-auto rounded w-full  mt-2 px-4 py-2 ${isAnswered ? "bg-blue-600 text-white rounded-lg hover:bg-blue-700" :
                         "bg-blue-200 text-blue-600 cursor-not-allowed"} `}
                     disabled={!isAnswered}
                 >

@@ -56,7 +56,7 @@ function Quiz() {
 
   if (quizStarted)
     return (
-      <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-3xl xl:max-w-4xl bg-white rounded-lg shadow-lg">
+      <div className="w-full my-4 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-3xl xl:max-w-4xl border-gray-300 dark:border-gray-700 bg-gray-200 dark:bg-gray-800 rounded-lg shadow-lg">
 
         <p className="text-md text-gray-600 mb-1 text-center font-semibold tracking-wide">
           Question {currentIndex + 1} of {quizData.length}
@@ -67,7 +67,7 @@ function Quiz() {
             Exit Quiz
           </button>
         </p>
-        <div className='max-w-md w-full mx-auto'>
+        <div className='max-w-md w-full mx-auto border-gray-300 '>
           <QuestionCard
             questionData={quizData[currentIndex]}
             onAnswer={handleAnswer}

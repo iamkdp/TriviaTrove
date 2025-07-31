@@ -19,7 +19,7 @@ function QuizStart({ onStart }) {
     };
     if (loading) return <Loading />;
     return (
-        <div className="r-width bg-gray-100 rounded-lg shadow-lg p-6 mx-auto">
+        <div className="r-width my-4 border-gray-200 h-128 dark:border-gray-700 bg-blue-300 dark:bg-gray-800 rounded-lg shadow-lg p-6 mx-auto">
             <h2 className="text-2xl font-bold text-center mb-6 text-blue-600">Configure Your Quiz</h2>
 
             <label className="block mb-4 font-semibold">
@@ -29,7 +29,7 @@ function QuizStart({ onStart }) {
                     min={1}
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
-                    className="w-full mt-1 block p-2 border rounded border-gray-300 shadow-sm 
+                    className="w-full mt-1 block p-2 border rounded bg-white dark:bg-blue-200 text-black border-gray-300 shadow-sm 
                     focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                     placeholder='Enter number(e.g-5)'
                 />
@@ -40,7 +40,7 @@ function QuizStart({ onStart }) {
                 <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="w-full mt-1 block p-2 border rounded border-gray-300 shadow-sm 
+                    className="w-full mt-1 block p-2 border rounded border-gray-300 shadow-sm bg-white dark:bg-blue-200  text-black
                      focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 >
                     <option value="">Any</option>
@@ -56,7 +56,7 @@ function QuizStart({ onStart }) {
                 <select
                     value={difficulty}
                     onChange={(e) => setDifficulty(e.target.value)}
-                    className="w-full mt-1 block p-2 border rounded border-gray-300 shadow-sm 
+                    className="w-full mt-1 block p-2 border rounded border-gray-300 shadow-sm bg-white dark:bg-blue-200 text-black
                      focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                 >
                     <option value="">Any</option>
@@ -68,7 +68,7 @@ function QuizStart({ onStart }) {
 
             <button
                 onClick={handleStart}
-                className="w-sm block mx-auto bg-blue-600 text-white px-4 py-2 rounded w-full hover:bg-blie-700 
+                className="w-xs sm:w-sm md:w-md  block mx-auto bg-blue-600 text-white px-4 py-2 rounded w-full hover:bg-blie-700 
                 font-semibold transittion duration-200"
             >
                 Start Quiz

@@ -1,78 +1,114 @@
-# TriviaTrove
+# 🎮 TriviaTrove
+
+Welcome to **TriviaTrove** — a fast, fun, and stylish trivia quiz app that tests your knowledge across multiple categories. Built with **React** and **Tailwind CSS**, and powered by a public Trivia API
+<!-- , this project also includes **Firebase Authentication** and a **Leaderboard** to rank top scorers! -->
+
+---
+
+## 🧠 Features
+
+- ✅ Interactive trivia quizzes from a live API
+<!-- - 🎨 Dark mode toggle with neon theme
+- 📱 Fully responsive design (Mobile to Desktop)
+- 🔐 Firebase Signup & Login -->
+- 🏆 Real-time leaderboard using Firebase Firestore
+- ⚡ Smooth UI transitions and instant feedback
+- 🧪 Score tracking and performance summary
+
+---
+
+## 🛠️ Tech Stack
+
+| Tech        | Purpose                        |
+|-------------|--------------------------------|
+| React       | Frontend UI                    |
+| Tailwind CSS| Styling & responsiveness       |
+| Vite        | Fast development build tool    |
+| Netlify     | Deployment                     |
+| Open Trivia API | Quiz questions source     |
+<!-- | Firebase    | Auth + Firestore for leaderboard | -->
+
+---
+
+## 🔥 Live Demo
+
+🌐 **[Live Site →](https://triviafuntrove.netlify.app)**  
+_(Try it on desktop and mobile!)_
 
 
-# 🧠 TriviaTrove: 1-Week Build Plan
-### ✅ Day 1 – Setup & Display (15–30 min)
- Initialize React app
+---
 
- Fetch trivia questions from API via useEffect
+## 🤝 Contributing
 
- Display questions in a clean component
+Contributions are welcome! Feel free to fork the repo, create a feature branch, and open a pull request.
 
- (Optional) Add a loader/spinner while fetching
+---
 
-### ✅ Day 2 – MCQ Options & Answer Selection
- Render options as clickable buttons
+### 👨‍💻 Built with 💙 by [Durga Prasad K](https://github.com/iamkdp)
+<!-- 
+ UI & Responsiveness Enhancements
+ Audit current UI (colors, spacing, layout issues).
 
- Highlight chosen option on click
+ Apply consistent color palette (your neon/dark theme).
 
- Show correct answer feedback (green/red)
+ Make layout responsive using Tailwind breakpoints (sm, md, lg, xl).
 
- Disable options after selection
+ Test on mobile, tablet, desktop.
 
-### ✅ Day 3 – Next Button & Scoring
- Add a “Next Question” button
+🌙 2. Add Dark Mode Toggle
+ Add dark/light classes to tailwind.config.js (darkMode: 'class').
 
- Maintain score state
+ Create a toggle button to switch themes.
 
- Increment score for correct answers
+ Store preference in localStorage or context.
 
- Display question count (e.g., Q3 of 10)
+ Style components for both light and dark themes.
 
-### ✅ Day 4 – Final Score Summary
- Show final score and total questions
+🔐 3. Firebase Auth (Signup/Login)
+ Set up Firebase project in console.
 
- Add “Restart Quiz” button
+ Install Firebase SDK:
+npm install firebase
 
- Store/display score from localStorage (optional)
+ Create firebase.js config file and initialize app.
 
- Display custom message based on score
+ Create Signup and Login components with forms.
 
-### ✅ Day 5 – Filters (Category & Difficulty)
- Add dropdown to select category
+ Implement Email/Password auth.
 
- Add dropdown to select difficulty
+ Store user state in context or localStorage.
 
- Fetch questions based on user selection
+ Display username after login.
 
-### ✅ Day 6 – UI Polish & Responsiveness
- Apply a consistent color theme (e.g., Tailwind)
+ Add Logout button.
 
- Make the layout mobile-responsive
+🏆 4. Leaderboard Feature
+ In Firebase, set up Firestore database.
 
- Add card styling, shadows, fonts
+ On quiz end, submit user score to Firestore with timestamp.
 
- Include header and favicon
+ Create Leaderboard component:
 
-### ✅ Day 7 – Deploy & Create README
- Deploy on Netlify or Vercel
+ Fetch top scores from Firestore.
 
- Write README.md with:
+ Display in a sorted table.
 
-Project overview
+ Show leaderboard link on home screen or after quiz.
 
-Features list
+🛠️ 5. Polish & Final Touches
+ Center buttons, adjust widths on larger screens.
 
-Tech stack used
+ Improve fonts and spacing for readability.
 
-Screenshots or GIF (Loom)
+ Add a favicon and title to the website.
 
-Live demo link
+ Optimize for performance (image compression, lazy loading if any assets).
 
-### 🎁 Optional Bonus Features
- Add a countdown timer for each question
+ Handle edge cases (invalid input, no questions, failed auth, etc.)
 
- Store and show high scores (e.g., localStorage or Firebase)
+🚀 6. Deployment
+ Test everything locally.
 
- Add login functionality (e.g., Google OAuth via Firebase)
+ Push final version to GitHub.
 
+ Redeploy on Netlify. -->

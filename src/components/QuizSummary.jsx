@@ -9,7 +9,7 @@ function QuizSummary({ score, total, onRestart }) {
   };
 
   return (
-    <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-6 text-center">
+    <div className="max-w-md my-6 w-full border-gray-300 dark:border-gray-700 bg-gray-300 dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
       <h2 className="text-2xl font-bold  text-blue-600 mb-4">🎮Quiz Completed!</h2>
       <p className="text-xl text-gray-700 font-medium mb-2">Your Score: <span className="text-green-500 font-semibold">{Math.floor((score / total) * 100)}</span></p>
       <HighScore score={Math.floor((score / total) * 100)} />
