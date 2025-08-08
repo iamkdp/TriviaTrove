@@ -1,28 +1,28 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
-@theme {
-    --color-primary: #2563eb;
-    --color-primary-dark:#1d4ed;
-}
 .r-width {
     width: 100%;
     max-width: 24rem;
 }
+
 @media (min-width: 640px) {
     .r-width {
         max-width: 28rem;
     }
 }
+
 @media (min-width: 768px) {
     .r-width {
         max-width: 32rem;
     }
 }
+
 @media (min-width: 1024px) {
     .r-width {
         max-width: 48rem;
     }
 }
+
 @media (min-width: 1280px) {
     .r-width {
         max-width: 56rem;

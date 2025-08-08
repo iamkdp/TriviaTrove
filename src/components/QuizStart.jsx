@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Loading from './Loading';
-function QuizStart({ onStart }) {
+import { useNavigate } from 'react-router-dom';
+function QuizStart({  }) {
+    const navigate = useNavigate();
     const [amount, setAmount] = useState(5);
     const [category, setCategory] = useState('');
     const [difficulty, setDifficulty] = useState('');
@@ -15,7 +17,7 @@ function QuizStart({ onStart }) {
         const res = await fetch(url);
         const data = await res.json();
         setLoading(false);
-        onStart(data.results);
+        navigate("/quiz", { state: { quizData: data.results } });
     };
     if (loading) return <Loading />;
     return (

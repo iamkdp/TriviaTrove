@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Timer from './Timer';
-export default function QuestionCard({ questionData, onAnswer, onNext }) {
+export default function QuestionCard({ questionData, onAnswer, onNext,isLast }) {
     if (!questionData) return <p>Invalid question data</p>;
     const { question, correct_answer, category, incorrect_answers } = questionData;
     const [options, setOptions] = useState([]);
@@ -55,6 +55,7 @@ export default function QuestionCard({ questionData, onAnswer, onNext }) {
                         <span dangerouslySetInnerHTML={{ __html: option }} />
                     </button>
                 ))}
+                {!isLast &&
                 <button
                     onClick={onNext}
                     className={`w-sm block mx-auto rounded w-full  mt-2 px-4 py-2 ${isAnswered ? "bg-blue-600 text-white rounded-lg hover:bg-blue-700" :
@@ -63,6 +64,7 @@ export default function QuestionCard({ questionData, onAnswer, onNext }) {
                 >
                     Next Question
                 </button>
+                }
             </div>
 
         </div>

@@ -1,11 +1,20 @@
 import HighScore from "./HighScore";
-function QuizSummary({ score, total, onRestart }) {
+import { useLocation, useNavigate } from "react-router-dom";
+function QuizSummary() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const score = location.state?.score || Number(localStorage.getItem('lastScore'))|| 0;
+  const total = location.state?.total || 0;
   const getMessage = () => {
     const percentage = (score / total) * 100;
     if (percentage === 100) return "🎉 Perfect Score!";
     if (percentage >= 70) return "👏 Great Job!";
     if (percentage >= 40) return "🙂 Good Try!";
     return "😅 Better Luck Next Time!";
+  };
+  const handleRestart = () => {
+    navigate("/"); // ✅ Go back to QuizStart page
   };
 
   return (
@@ -14,7 +23,7 @@ function QuizSummary({ score, total, onRestart }) {
       <p className="text-xl text-gray-700 font-medium mb-2">Your Score: <span className="text-green-500 font-semibold">{Math.floor((score / total) * 100)}</span></p>
       <HighScore score={Math.floor((score / total) * 100)} />
       <p className="text-lg text-gray-600 mb-6">{getMessage()}</p>
-      <button onClick={onRestart} className="bg-blue-600 text-white font-semibold rounded transition px-4 py-2 rounded hover:bg-blue-700">
+      <button onClick={handleRestart} className="bg-blue-600 text-white font-semibold rounded transition px-4 py-2 rounded hover:bg-blue-700">
         Restart Quiz
       </button>
     </div>

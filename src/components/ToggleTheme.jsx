@@ -16,8 +16,14 @@ const ToggleTheme = () => {
 
     return (
 
-        <button onClick={toggleTheme} className="px-4 py-2 absolute top-28 right-4 rounded-lg border border-blue-300 text-blue-300 bg-primary hover:bg-blue-300 hover:text-black transition duration-300 ">
-            {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+        <button onClick={toggleTheme} className="w-auto absolute top-12 right-4 px-3 py-1
+    rounded-lg
+    border border-blue-400 dark:border-blue-600
+    bg-blue-100 dark:bg-blue-800
+    text-gray-800 dark:text-gray-200
+    hover:bg-blue-200 dark:hover:bg-blue-700
+    transition duration-300">
+            {theme === 'dark' ? "☀️ Light" : "🌙 Dark"}
         </button>
     );
 }
