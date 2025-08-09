@@ -6,7 +6,7 @@ import QuizStart from "./components/QuizStart";
 import Quiz from "./components/Quiz";
 import QuizSummary from "./components/QuizSummary";
 import Login from "./components/Login";
-import Signup from "./components/SignUp";
+import SignUp from "./components/SignUp";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
               <Route path="/quiz" element={<Quiz />} />
               <Route path="/result" element={<QuizSummary />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
+              <Route path="/signup" element={<SignUp />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>
