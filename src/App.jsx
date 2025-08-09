@@ -6,7 +6,7 @@ import QuizStart from "./components/QuizStart";
 import Quiz from "./components/Quiz";
 import QuizSummary from "./components/QuizSummary";
 import Login from "./components/Login";
-import Signup from "./components/Signup";
+import Signup from "./components/SignUp";
 
 function App() {
   return (
